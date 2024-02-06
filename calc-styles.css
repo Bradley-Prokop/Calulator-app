@@ -1,0 +1,93 @@
+body{
+    background-color: grey;
+}
+
+h1{
+    font-family: monospace;
+    font-size: 3rem;
+    text-align: center;
+    color: blue;
+    text-shadow: 2px 4px black;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+h2{
+    font-family: monospace;
+    font-size: 30px;
+    text-align: center;
+    color: blue;
+    text-shadow: 2px 2px black;
+}
+
+#container{
+    background-color: black;
+    width: 35%;
+    height: 475px;
+    margin: auto;
+    border-radius: 5%;
+    margin-bottom: 2%;
+}
+
+#display{
+    position: relative;
+    top: 5%;
+    margin: auto;
+    background-color: white;
+    width: 75%;
+    height: 75px;
+    border-radius: 10%;
+}
+
+#output{
+    position: relative;
+    top: 40%;
+    margin-right: 17px;
+    color: Black;
+    text-align: right;
+    font-size: 40px;
+}
+
+#button-container{
+    display: grid;
+    grid-template-columns: repeat(4, .5fr);
+    margin-top: 13%;
+    margin-left: 5%;
+    margin-right: 5%;
+    grid-auto-rows: 50px;
+    grid-gap: 15px;
+}
+
+button{
+    font-weight: bolder;
+    font-size: x-large;
+    border-radius: 50%;
+    border: black;
+    box-shadow: 1px 6px #18191A;
+}
+
+#zero{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.blue{
+    background-color: blue;
+    font-size: xx-large;
+}
+
+.grey{
+    background-color: grey;
+}
+
+#decimal{
+    font-size: 20px;
+}
+
+.default-click{
+    background-color: rgb(53, 53, 53);
+}
+
+/* @media (max-width: 600px) {
+    
+} */
