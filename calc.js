@@ -39,7 +39,7 @@ $(".btn").on("click", function(){
     
     //Shows the answer if something is calculated
     if(solved){
-        $("#output").html(answer); 
+        $("#output").html(answer.toFixed(4)); 
         solved=false;
     }
 });
