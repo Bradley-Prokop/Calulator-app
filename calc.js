@@ -6,40 +6,37 @@ var solved=false;
 var buttonID;
 var answer;
 
-// Bugs and other things to fix
-// 1) After solving a problem and clicking a number the number gets added instead of being replaced (advanced bug)
-
 $(".btn").on("click", function(){
     
     buttonID = $(this).attr('id');
     animatePress();
     playSound();
 
-    if($("#"+buttonID).hasClass("value")){//if button is a number 
+    if($("#"+buttonID).hasClass("value")){ 
        
-        //deals with hanging zero
         if(currentNumber!=0)
             currentNumber += $("#"+buttonID).html();
         else
             currentNumber = $("#"+buttonID).html();
     }
-    else if($("#"+buttonID).hasClass("function")){//if button is an operation (add subtract etc)
-        firstNumber = parseFloat(currentNumber);//parse and store in firstNumber
-        currentNumber=0; //set current number to zero 
-        operation=true; //sets true for later display
-        operationType=buttonID; //lets solve know what to do             
-    }else//called if white button or equals button it clicked
+    else if($("#"+buttonID).hasClass("function")){
+        firstNumber = parseFloat(currentNumber);
+        currentNumber=0;  
+        operation=true; 
+        operationType=buttonID;              
+    }else
         action();
     
-    //Determines the output based on if an operation was clicked or not
-    if(operation&&currentNumber===0){
+    if(operation&&currentNumber===0)
         $("#output").html(firstNumber);
-    }else
+    else
         $("#output").html(currentNumber);
     
-    //Shows the answer if something is calculated
     if(solved){
-        $("#output").html(answer.toFixed(4)); 
+        if(answer%1==0)
+            $("#output").html(answer); 
+        else
+            $("#output").html(answer.toFixed(3)); 
         solved=false;
     }
 });
@@ -104,7 +101,6 @@ function division(){
    answer = firstNumber / currentNumber;
 }
 
-//all of the function below work 100%
 function percent(){
     currentNumber=currentNumber/100;
 }
